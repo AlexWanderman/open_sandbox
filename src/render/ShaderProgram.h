@@ -1,18 +1,19 @@
 #pragma once
 
-#include <glad/glad.h>
 #include <string>
+
+#include <glad/glad.h>
 #include <glm/mat4x4.hpp>
 
-namespace Renderer {
+namespace render {
     class ShaderProgram {
     public:
-        ShaderProgram(const std::string& vertex_shader, const std::string& fragment_shader);
+        ShaderProgram(const std::string& vertexShader, const std::string& fragmentShader);
         ~ShaderProgram();
-        bool is_compiled() const { return is_cmp; }
+        bool isCompiled() const { return m_isCompiled; }
         void use() const;
-        void set_int(const std::string& name, const GLint value);
-        void set_matrix4(const std::string& name, const glm::mat4& matrix);
+        void setInt(const std::string& name, const GLint value);
+        void setMatrix4(const std::string& name, const glm::mat4& matrix);
 
         ShaderProgram() = delete;
         ShaderProgram(const ShaderProgram&) = delete;
@@ -21,9 +22,9 @@ namespace Renderer {
         ShaderProgram(ShaderProgram&& shaderProgram) noexcept;
 
     private:
-        bool create_shader(const std::string& source, const GLenum shaderType, GLuint& shaderID);
+        bool createShader(const std::string& source, const GLenum shaderType, GLuint& shaderID);
 
-        bool is_cmp = false;
-        GLuint id = 0;
+        bool m_isCompiled = false;
+        GLuint m_ID = 0;
     };
 }

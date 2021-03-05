@@ -7,8 +7,12 @@ project(${PROJECT_NAME})
 add_executable(
     ${PROJECT_NAME}
     src/main.cpp
+    src/render/AnimatedSprite.cpp
+    src/render/AnimatedSprite.h
     src/render/ShaderProgram.cpp
     src/render/ShaderProgram.h
+    src/render/Sprite.cpp
+    src/render/Sprite.h
 	src/render/Texture.cpp
     src/render/Texture.h
     src/resources/ResourceManager.cpp
