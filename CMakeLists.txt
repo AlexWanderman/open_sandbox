@@ -5,19 +5,34 @@ set(PROJECT_NAME open_sandbox)
 project(${PROJECT_NAME})
 
 add_executable(
-    ${PROJECT_NAME}
-    src/main.cpp
-    src/render/AnimatedSprite.cpp
-    src/render/AnimatedSprite.h
-    src/render/ShaderProgram.cpp
-    src/render/ShaderProgram.h
-    src/render/Sprite.cpp
-    src/render/Sprite.h
-	src/render/Texture.cpp
-    src/render/Texture.h
-    src/resources/ResourceManager.cpp
-	src/resources/ResourceManager.h
-    src/resources/stb_image.h
+		${PROJECT_NAME}
+		src/main.cpp
+
+        src/game/Block.cpp
+		src/game/Block.h
+		src/game/Game.cpp
+		src/game/Game.h
+
+		src/render/AnimatedSprite.cpp
+		src/render/AnimatedSprite.h
+		src/render/IndexBuffer.cpp
+		src/render/IndexBuffer.h
+		src/render/ShaderProgram.cpp
+		src/render/ShaderProgram.h
+		src/render/Sprite.cpp
+		src/render/Sprite.h
+		src/render/Texture.cpp
+		src/render/Texture.h
+		src/render/VertexArray.cpp
+		src/render/VertexArray.h
+		src/render/VertexBuffer.cpp
+		src/render/VertexBuffer.h
+		src/render/VertexBufferLayout.cpp
+		src/render/VertexBufferLayout.h
+
+		src/resources/ResourceManager.cpp
+		src/resources/ResourceManager.h
+		src/resources/stb_image.h
 )
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)

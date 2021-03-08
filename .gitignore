@@ -1,7 +1,8 @@
 .idea/
-.vs/
-build/
 cmake-build-debug/
+cmake-build-minsizerel/
+cmake-build-release/
+cmake-build-relwithdebinfo/
 out/
 
 CMakeSettings.json

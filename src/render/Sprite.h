@@ -5,6 +5,14 @@
 
 #include <glad/glad.h>
 #include <glm/vec2.hpp>
+#include <glm/mat4x4.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
+#include "../render/IndexBuffer.h"
+#include "../render/ShaderProgram.h"
+#include "../render/Texture.h"
+#include "../render/VertexArray.h"
+#include "../render/VertexBuffer.h"
 
 namespace render {
 
@@ -33,12 +41,14 @@ namespace render {
     protected:
         std::shared_ptr<Texture2D> m_pTexture;
         std::shared_ptr<ShaderProgram> m_pShaderProgram;
+
         glm::vec2 m_position;
         glm::vec2 m_size;
         float m_rotation;
-        GLuint m_VAO;
-        GLuint m_vertexCoordsVBO;
-        GLuint m_textureCoordsVBO;
-    };
 
+        VertexArray m_vertexArray;
+        IndexBuffer m_indexBuffer;
+        VertexBuffer m_vertexCoordsBuffer;
+        VertexBuffer m_textureCoordsBuffer;
+    };
 }

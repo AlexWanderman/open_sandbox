@@ -1,23 +1,29 @@
-#include <sstream>
-#include <fstream>
-#include <iostream>
-
 #include "../resources/ResourceManager.h"
-#include "../render/ShaderProgram.h"
-#include "../render/Texture.h"
-#include "../render/Sprite.h"
-#include "../render/AnimatedSprite.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STBI_ONLY_PNG
 #include "../resources/stb_image.h"
 
-ResourceManager::ResourceManager(const std::string& executablePath) {
+ResourceManager::ShaderProgramsMap ResourceManager::m_shaderPrograms;
+ResourceManager::TexturesMap ResourceManager::m_textures;
+ResourceManager::SpritesMap ResourceManager::m_sprites;
+ResourceManager::AnimatedSpritesMap ResourceManager::m_animatedSprites;
+std::string ResourceManager::m_path;
+
+void ResourceManager::unloadAllResources() {
+    m_shaderPrograms.clear();
+    m_textures.clear();
+    m_sprites.clear();
+    m_animatedSprites.clear();
+    m_path.clear();
+}
+
+void ResourceManager::setExecutablePath(const std::string& executablePath) {
     size_t found = executablePath.find_last_of("/\\");
     m_path = executablePath.substr(0, found);
 }
 
-std::string ResourceManager::getFileString(const std::string& relativeFilePath) const {
+std::string ResourceManager::getFileString(const std::string& relativeFilePath) {
     std::ifstream f;
     f.open(m_path + "/" + relativeFilePath.c_str(), std::ios::in | std::ios::binary);
     if (!f.is_open()) {
@@ -37,20 +43,20 @@ std::shared_ptr<render::ShaderProgram> ResourceManager::loadShaders(const std::s
         return nullptr;
     }
 
-    std::string fragmentxString = getFileString(fragmentPath);
-    if (fragmentxString.empty()) {
+    std::string fragmentString = getFileString(fragmentPath);
+    if (fragmentString.empty()) {
         std::cerr << "No fragment shader!" << std::endl;
         return nullptr;
     }
 
-    std::shared_ptr<render::ShaderProgram>& newShader = m_shaderPrograms.emplace(shaderName, std::make_shared<render::ShaderProgram>(vertexString, fragmentxString)).first->second;
+    std::shared_ptr<render::ShaderProgram>& newShader = m_shaderPrograms.emplace(shaderName, std::make_shared<render::ShaderProgram>(vertexString, fragmentString)).first->second;
     if (newShader->isCompiled()) {
         return newShader;
     }
 
     std::cerr << "Can't load shader program:\n"
-        << "Vertex: " << vertexPath << "\n"
-        << "Fragment: " << fragmentPath << std::endl;
+              << "Vertex: " << vertexPath << "\n"
+              << "Fragment: " << fragmentPath << std::endl;
 
     return nullptr;
 }

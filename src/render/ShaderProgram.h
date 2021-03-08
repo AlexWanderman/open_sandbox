@@ -1,9 +1,11 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 
 #include <glad/glad.h>
 #include <glm/mat4x4.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace render {
     class ShaderProgram {

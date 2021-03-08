@@ -1,7 +1,4 @@
-#include <iostream>
-
 #include "../render/AnimatedSprite.h"
-#include "../render/Texture.h"
 
 namespace render {
 
@@ -61,19 +58,18 @@ namespace render {
             auto subTexture = m_pTexture->getSubTexture(m_pCurrentAnimationDurations->second[m_currentFrame].first);
 
             const GLfloat textureCoords[] = {
-                // U  V
-                subTexture.leftBottomUV.x, subTexture.leftBottomUV.y,
-                subTexture.leftBottomUV.x, subTexture.rightTopUV.y,
-                subTexture.rightTopUV.x,   subTexture.rightTopUV.y,
+                    // 1---2
+                    // | / |
+                    // 0---3
 
-                subTexture.rightTopUV.x,   subTexture.rightTopUV.y,
-                subTexture.rightTopUV.x,   subTexture.leftBottomUV.y,
-                subTexture.leftBottomUV.x, subTexture.leftBottomUV.y
+                    // U  V
+                    subTexture.leftBottomUV.x, subTexture.leftBottomUV.y,
+                    subTexture.leftBottomUV.x, subTexture.rightTopUV.y,
+                    subTexture.rightTopUV.x, subTexture.rightTopUV.y,
+                    subTexture.rightTopUV.x, subTexture.leftBottomUV.y
             };
 
-            glBindBuffer(GL_ARRAY_BUFFER, m_textureCoordsVBO);
-            glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(textureCoords), &textureCoords);
-            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            m_textureCoordsBuffer.update(textureCoords, 2 * 4 * sizeof(GLfloat));
             m_dirty = false;
         }
         Sprite::render();

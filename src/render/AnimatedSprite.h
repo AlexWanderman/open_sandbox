@@ -1,9 +1,11 @@
 #pragma once
 
+#include <iostream>
 #include <map>
 #include <vector>
 
 #include "../render/Sprite.h"
+#include "../render/Texture.h"
 
 namespace render {
 
