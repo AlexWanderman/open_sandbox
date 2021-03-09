@@ -1,6 +1,6 @@
 #include "../render/VertexBufferLayout.h"
 
-namespace render {
+namespace renderEngine {
 
     VertexBufferLayout::VertexBufferLayout(): m_stride(0) { }
 

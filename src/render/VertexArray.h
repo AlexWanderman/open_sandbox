@@ -4,7 +4,7 @@
 #include "../render/VertexBuffer.h"
 #include "../render/VertexBufferLayout.h"
 
-namespace render {
+namespace renderEngine {
     class VertexArray {
     public:
         VertexArray();

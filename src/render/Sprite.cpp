@@ -1,6 +1,6 @@
 #include "../render/Sprite.h"
 
-namespace render {
+namespace renderEngine {
 
     Sprite::Sprite(
         std::shared_ptr<Texture2D> pTexture,
@@ -57,7 +57,7 @@ namespace render {
         textureCoordsLayout.addElementLayoutFloat(2, false);
         m_vertexArray.addBuffer(m_textureCoordsBuffer, textureCoordsLayout);
 
-        m_indexBuffer.init(indices, 3 * 2 * sizeof(GLuint));
+        m_indexBuffer.init(indices, 3 * 2);
 
         m_vertexArray.unbind();
         m_indexBuffer.unbind();
@@ -76,14 +76,12 @@ namespace render {
         model = glm::translate(model, glm::vec3(-0.5f * m_size.x, -0.5f * m_size.y, 0.f));
         model = glm::scale(model, glm::vec3(m_size, 1.f));
 
-        m_vertexArray.bind();
         m_pShaderProgram->setMatrix4("model_matrix", model);
 
         glActiveTexture(GL_TEXTURE0);
         m_pTexture->bind();
 
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-        m_vertexArray.bind();
+        Renderer::draw(m_vertexArray, m_indexBuffer, *m_pShaderProgram);
     }
 
     void Sprite::setPosition(const glm::vec2& position) {

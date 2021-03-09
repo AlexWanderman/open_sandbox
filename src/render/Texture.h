@@ -6,7 +6,7 @@
 #include <glad/glad.h>
 #include <glm/vec2.hpp>
 
-namespace render {
+namespace renderEngine {
     class Texture2D {
     public:
 

@@ -7,7 +7,7 @@
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-namespace render {
+namespace renderEngine {
     class ShaderProgram {
     public:
         ShaderProgram(const std::string& vertexShader, const std::string& fragmentShader);

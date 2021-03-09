@@ -1,6 +1,6 @@
 #include "../game/Block.h"
 
-Block::Block(std::shared_ptr<render::AnimatedSprite> pSprite, const glm::vec2 &position):
+Block::Block(std::shared_ptr<renderEngine::AnimatedSprite> pSprite, const glm::vec2 &position):
     m_pSprite(std::move(pSprite)),
     m_position(position)
 {

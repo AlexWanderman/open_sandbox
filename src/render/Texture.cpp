@@ -1,6 +1,6 @@
 #include "../render/Texture.h"
 
-namespace render {
+namespace renderEngine {
 
     Texture2D::Texture2D(
         const GLuint width,

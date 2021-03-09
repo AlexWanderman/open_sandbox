@@ -9,12 +9,13 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "../render/IndexBuffer.h"
+#include "../render/Renderer.h"
 #include "../render/ShaderProgram.h"
 #include "../render/Texture.h"
 #include "../render/VertexArray.h"
 #include "../render/VertexBuffer.h"
 
-namespace render {
+namespace renderEngine {
 
     class Texture2D;
     class ShaderProgram;

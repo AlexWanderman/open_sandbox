@@ -8,6 +8,8 @@
 #include "./game/Game.h"
 #include "./game/Block.h"
 
+#include "./render/Renderer.h"
+
 #include "./resources/ResourceManager.h"
 
 glm::ivec2 g_windowSize(1280, 720);
@@ -16,7 +18,7 @@ Game g_game(g_windowSize);
 void glfwWindowSizeCallback(GLFWwindow* pWindow, int width, int height) {
     g_windowSize.x = width;
     g_windowSize.y = height;
-    glViewport(0, 0, width, height);
+    renderEngine::Renderer::setViewport(0, 0, width, height);
 }
 
 void glfwKeyCallback(GLFWwindow* pWindow, int key, int scancode, int action, int mode) {
@@ -54,10 +56,10 @@ int main(int argc, char** argv) {
         std::cerr << "Can't load GLAD!" << std::endl;
     }
 
-    std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
-    std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+    std::cout << "Renderer: " << renderEngine::Renderer::getRendererStr() << std::endl;
+    std::cout << "OpenGL version: " << renderEngine::Renderer::getVersionStr() << std::endl;
 
-    glClearColor(.5f, .5f, 1.f, 1);
+    renderEngine::Renderer::setClearColor(.5f, .5f, 1.f, 1);
 
     {
         ResourceManager::setExecutablePath(argv[0]);
@@ -75,7 +77,7 @@ int main(int argc, char** argv) {
             g_game.update(duration);
 
             /* Render here */
-            glClear(GL_COLOR_BUFFER_BIT);
+            renderEngine::Renderer::clear();
             g_game.render();
 
             /* Swap front and back buffers */

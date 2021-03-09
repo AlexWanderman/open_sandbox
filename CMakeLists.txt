@@ -17,6 +17,8 @@ add_executable(
 		src/render/AnimatedSprite.h
 		src/render/IndexBuffer.cpp
 		src/render/IndexBuffer.h
+		src/render/Renderer.cpp
+		src/render/Renderer.h
 		src/render/ShaderProgram.cpp
 		src/render/ShaderProgram.h
 		src/render/Sprite.cpp

@@ -1,6 +1,6 @@
 #include "../render/AnimatedSprite.h"
 
-namespace render {
+namespace renderEngine {
 
     AnimatedSprite::AnimatedSprite(
         std::shared_ptr<Texture2D> pTexture,

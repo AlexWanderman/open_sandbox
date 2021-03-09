@@ -7,7 +7,7 @@
 #include "../render/Sprite.h"
 #include "../render/Texture.h"
 
-namespace render {
+namespace renderEngine {
 
     class AnimatedSprite : public Sprite {
     public:
