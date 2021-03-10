@@ -1,0 +1,369 @@
+{
+  "shaders" : [
+    {
+      "name" : "SpriteShader",
+      "filePath_v" : "res/shaders/vertex_sprite.txt",
+      "filePath_f" : "res/shaders/fragment_sprite.txt"
+    }
+  ],
+
+  "textureAtlases" : [
+    {
+      "name" : "ColorsTextureAtlas",
+      "filePath" : "res/textures/basic_colors.png",
+      "width" : 128,
+      "height" : 128,
+      "subTextureWidth" : 16,
+      "subTextureHeight" : 16,
+      "subTextures" : [
+        "color_1",
+        "color_2",
+        "color_3",
+        "color_4",
+        "color_5",
+        "color_6",
+        "color_7",
+        "color_8",
+        "color_9",
+        "color_10",
+        "color_11",
+        "color_12",
+        "color_13",
+        "color_14",
+        "color_15",
+        "color_16",
+        "color_17",
+        "color_18",
+        "color_19",
+        "color_20",
+        "color_21",
+        "color_22",
+        "color_23",
+        "color_24",
+        "color_25",
+        "color_26",
+        "color_27",
+        "color_28",
+        "color_29",
+        "color_30",
+        "color_31",
+        "color_32",
+        "color_33",
+        "color_34",
+        "color_35",
+        "color_36",
+        "color_37",
+        "color_38",
+        "color_39",
+        "color_40",
+        "color_41",
+        "color_42",
+        "color_43",
+        "color_44",
+        "color_45",
+        "color_46",
+        "color_47",
+        "color_48",
+        "color_49",
+        "color_50",
+        "color_51",
+        "color_52",
+        "color_53",
+        "color_54",
+        "color_55",
+        "color_56",
+        "color_57",
+        "color_58",
+        "color_59",
+        "color_60",
+        "color_61",
+        "color_62",
+        "color_63",
+        "color_64"
+      ]
+    }
+  ],
+
+  "animatedSprites" : [
+    {
+      "name" : "ColorAnimatedSprite",
+      "textureAtlas" : "ColorsTextureAtlas",
+      "shader" : "SpriteShader",
+      "initialWidth" : 100,
+      "initialHeight" : 100,
+      "initialSubTexture" : "color_1",
+      "states" : [
+        {
+          "stateName" : "ColorAnimatedState",
+          "frames" : [
+            {
+              "subTexture" : "color_1",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_2",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_3",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_4",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_5",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_6",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_7",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_8",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_9",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_10",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_11",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_12",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_13",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_14",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_15",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_16",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_17",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_18",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_19",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_20",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_21",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_22",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_23",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_24",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_25",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_26",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_27",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_28",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_29",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_30",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_31",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_32",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_33",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_34",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_35",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_36",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_37",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_38",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_39",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_40",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_41",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_42",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_43",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_44",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_45",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_46",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_47",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_48",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_49",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_50",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_51",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_52",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_53",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_54",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_55",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_56",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_57",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_58",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_59",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_60",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_61",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_62",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_63",
+              "duration" : 100000000
+            },
+            {
+              "subTexture" : "color_64",
+              "duration" : 100000000
+            }
+          ]
+        },
+        {
+          "stateName" : "ColorStaticState",
+          "frames": [
+            {
+              "subTexture" : "color_1",
+              "duration" : 1000000000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

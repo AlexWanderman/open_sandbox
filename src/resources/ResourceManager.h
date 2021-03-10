@@ -8,6 +8,10 @@
 #include <fstream>
 #include <iostream>
 
+// rapidjson
+#include <document.h>
+#include <error/en.h>
+
 #include "../render/ShaderProgram.h"
 #include "../render/Texture.h"
 #include "../render/Sprite.h"
@@ -65,6 +69,8 @@ public:
             const unsigned int subTextureWidth,
             const unsigned int subTextureHeight
     );
+
+    static bool loadResources(const std::string &path);
 
 private:
     static std::string getFileString(const std::string& relativeFilePath);
