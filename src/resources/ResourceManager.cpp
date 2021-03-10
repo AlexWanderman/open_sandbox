@@ -125,7 +125,7 @@ std::shared_ptr<renderEngine::Sprite> ResourceManager::loadSprite(
     }
 
     std::shared_ptr<renderEngine::Sprite> newSprite = m_sprites.emplace(
-            textureName,
+            spriteName,
             std::make_shared<renderEngine::Sprite>(
                 pTexture,
                 subTextureName,
